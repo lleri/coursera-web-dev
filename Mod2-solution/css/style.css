@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  font-family: Lucida Console;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+.bg1
+{
+    background-color: #F2C8AC;
+}
+
+.bg2
+{
+    background-color: #C7DBC4;
+}
+
+.bg3
+{
+    background-color: #E6E6B9;
+}
+
+
+.grey_bg1
+{
+  background-color: #D0C0C0;
+}
+
+.grey_bg2
+{
+  background-color: #B0C0B0;
+}
+
+.grey_bg3
+{
+  background-color: #C0C0A0;
+}
+
+.container {
+  position: relative;
+  border: 1px solid black;
+}
+
+div.container p {
+  width: 90%;
+   margin-right: auto;
+  margin-left: auto;
+  text-align: justify;
+  padding: 30px 10px 10px 10px;
+}
+
+h2 {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 30%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  padding: 4px;
+  margin: 0;
+  font-size: 0.95em;
+}
+
+/* Simple Responsive Framework. */
+.row {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  .col-lg-4 {
+    width: 32%;
+    margin: 1% 1% 1% 0;
+  }
+
+}
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  .col-md-6 {
+    width: 48%;
+    margin: 1% 1% 1% 1%;
+  }
+  .col-md-12 {
+    width: 98%;
+    margin-left: 1%
+  }
+
+}
+
+@media (max-width: 767px) {
+  .col-sd-1, .col-sd-2, .col-sd-3, .col-sd-4, .col-sd-5, .col-sd-6, .col-sd-7, .col-sd-8, .col-sd-9, .col-sd-10, .col-sd-11, .col-sd-12 {
+    float: left;
+/*    border: 1px solid green;*/
+  }
+
+  .col-sd-12 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
