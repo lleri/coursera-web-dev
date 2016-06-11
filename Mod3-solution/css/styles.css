@@ -1,11 +1,10 @@
 * {
-  /*box-sizing: border-box;*/
   font-family: Lucida Console;
 }
 
 /** HEADER **/
 #header-nav {
-  background-color: #DDDDDD;
+  background-color: #B6EF8F;
   border-radius: 0;
   border: 0;
 }
@@ -29,6 +28,13 @@
   text-decoration: none;
 }
 
+#btn-collapse {
+	border-color: #000;
+
+}
+#btn-collapse > span {
+	background-color: #000;
+	}
 #collapsable-nav {
 	margin-bottom: 0;
 	padding-bottom: 0;
@@ -38,21 +44,27 @@
 }
 
 #nav-list a {
-	color: #951C49;
+	color: #225522;
 	text-align: center;
 	width: 100%;
-
 }
 
 #nav-list a p {
 	margin-top: 10px;
 	font-size: 1.8em;
 }
+
+#nav-list a:hover {
+  background: #fff;
+}
+#collapsable-nav {
+	margin-bottom: -20px;
+}
 /** Header END **/
 /** Main content **/
 #long-text {
 	text-align: justify;
-	background-color: #EEEEEE;
+	background-color: #A6DF7F;
 }
 
 #long-text > h3 {
