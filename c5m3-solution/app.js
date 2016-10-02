@@ -62,7 +62,6 @@ function MenuSearchService($http, ApiBasePath) {
         }).then(function (result) {
             var foundItems = [];
             var i = 0;
-            console.log(result);
             for(i = 0; i < result.data.menu_items.length; i++) {
               // if( (result.result.data.menu_items[i].name.toLowerCase().includes(searchTerm.toLowerCase())) ||
                 if(  (result.data.menu_items[i].description.toLowerCase().includes(searchTerm.toLowerCase())) ) {
