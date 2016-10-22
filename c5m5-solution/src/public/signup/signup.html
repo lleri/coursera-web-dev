@@ -1,0 +1,94 @@
+<div class="container">
+  <h1>Please, sign up for our special offer!</h1>
+  <fieldset>
+    <form name='regForm' novalidate>
+      <input type="text" name="firstname" placeholder="Pick a first name"
+        ng-model="signUpCtrl.item.firstname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+        {{ signUpCtrl.item.firstname }}
+        <span
+          ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+          First name must be at least 4 characters long
+        </span>
+        <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+          First name must not be longer than 10 characters
+        </span>
+        <br>
+
+        <input type="text" name="lastname" placeholder="Pick a last name"
+          ng-model="signUpCtrl.item.lastname"
+          required
+          minlength="4"
+          ng-maxlength="20">
+          {{ signUpCtrl.item.lastname }}
+          <span
+            ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+            Last name must be at least 4 characters long
+          </span>
+          <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+            Last name must not be longer than 20 characters
+          </span>
+          <br>
+
+      <input type="email" name="email" placeholder="Email"
+        ng-model="signUpCtrl.item.email"
+        required
+        >
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+        <input type="text" name="shortname" placeholder="Your favorite dish (like L1 or A2 etc)"
+          ng-model="signUpCtrl.item.shortCatName"
+          minlength="2"
+          maxlength="4"
+          required>
+          <br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="signUpCtrl.item.phone"
+        required
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="signUpCtrl.submit()" >Submit</button>
+
+        <div style="margin-top: 10px;" ng-if="!regForm.$valid">
+          Please, fill all the fields according to requirements! Incorrect fields are: <br>
+          <ul>
+          <!-- <div style="margin-left: 20px;"ng-if="regForm.firstname.$invalid">FIRST NAME (should be between 4 and 10 symbols)</div>
+          <div ng-if="regForm.lastname.$invalid">LAST NAME (should be between 4 and 20 symbols)</div>
+          <div ng-if="regForm.email.$invalid">EMAIL</div>
+          <div ng-if="regForm.category.$invalid">Your favorite dish (should be 2 symbols like L1 or A2 etc)</div>
+          <div ng-if="regForm.phone.$invalid">PHONE (should be in format 777-777-7777)</div> -->
+          <li ng-if="regForm.firstname.$invalid">FIRST NAME (should be between 4 and 10 symbols)</li>
+          <li ng-if="regForm.lastname.$invalid">LAST NAME (should be between 4 and 20 symbols)</li>
+          <li ng-if="regForm.email.$invalid">EMAIL (name@domain)</li>
+          <li ng-if="regForm.shortname.$invalid">Your favorite dish (should be between 2 and 4 symbols (L1 or A2 etc) )</li>
+          <li ng-if="regForm.phone.$invalid">PHONE (should be in format 777-777-7777)</li>
+        </ul>
+        </div>
+
+        <div style="margin-top: 10px;" ng-if="regForm.$valid && !signUpCtrl.message && !signUpCtrl.completed">
+          Everything is correct! Please, press a Submit button to save your data!
+        </div>
+
+        <div style="margin-top: 10px;" ng-if="signUpCtrl.completed">
+          Your information has been saved.
+        </div>
+
+        <div style="margin-top: 10px;" ng-if="signUpCtrl.message">
+          No such menu number exists!
+        </div>
+
+    </form>
+  </fieldset>
+</div>

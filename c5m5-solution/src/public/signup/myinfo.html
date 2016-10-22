@@ -1,0 +1,27 @@
+<div class="container" ng-if="myInfoCtrl.foundData">
+  <div class="row">
+    <div class="col-sm-2">
+      <p>Hello, {{ myInfoCtrl.item.firstname }} {{ myInfoCtrl.item.lastname }}!</p>
+      <p>
+        Your details:
+      </p>
+      <p>email: {{ myInfoCtrl.item.email }}</p>
+      <p>phone: {{ myInfoCtrl.item.phone }}</p>
+    </div>
+    <div class="col-sm-5">
+      <div class="menu-item-photo">
+        <div>{{myInfoCtrl.item.shortCatName}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.item.shortCatName}}.jpg" alt="{{myInfoCtrl.item.name}}">
+      </div>
+    </div>
+    <div class="menu-item-description col-sm-5">
+      <h3 class="menu-item-title">{{myInfoCtrl.item.name}}</h3>
+      <p class="menu-item-details">{{myInfoCtrl.item.description}}</p>
+    </div>
+  </div>
+  <hr class="visible-xs">
+</div>
+
+<div class="container" ng-if="!myInfoCtrl.foundData">
+  Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>
